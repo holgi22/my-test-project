@@ -23,16 +23,11 @@ public class Robot2 : MonoBehaviour
         txt.text = "State : " + currentState.GetType().ToString();
     }
 
-    
-    
-
-    private void Update()
+     private void Update()
     {
-        currentState.OnUpdate();
-        
+        currentState?.OnUpdate();
     }
 }
-
 
 public class RobotState
 {
@@ -112,7 +107,6 @@ public class WorkState : RobotState
         {
             robot.SwitchState(new SleepState());
         }
-
     }
 }
 
